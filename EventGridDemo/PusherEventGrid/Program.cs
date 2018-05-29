@@ -35,9 +35,13 @@ namespace PusherEventGrid
         private static async Task<HttpResponseMessage> MakeRequestEvent(string channelPid)
         {
             // TODO : replace using the .NEt SDK
-            string endpoint = "REPLACE_BY_URL_OF_YOUR_EVENTGRIDTOPIC_ENDPOINT";
+            //string endpoint = "REPLACE_BY_URL_OF_YOUR_EVENTGRIDTOPIC_ENDPOINT";
+            string endpoint = endpoint = "https://amsresetchanneltopic.westeurope-1.eventgrid.azure.net/api/events";
+
             var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Add("aeg-sas-key", "REPLACE_BY_YOUR_EVENTGRIDTOPIC_KEY");
+            //httpClient.DefaultRequestHeaders.Add("aeg-sas-key", "REPLACE_BY_YOUR_EVENTGRIDTOPIC_KEY");
+            httpClient.DefaultRequestHeaders.Add("aeg-sas-key", "RpfDX+hA3nEOGzDfsswRAXnojLpEWJ0KyvCp0LTGO3Q=");
+
 
             List<CustomEvent<ResetChannelEvent>> events = new List<CustomEvent<ResetChannelEvent>>();
 
